@@ -1,7 +1,4 @@
-# Real-Time-Fake-Detection-System-Using-CNN-GAN
-AI-powered Deepfake Detection Web Application using Python, Flask, TensorFlow, CNN, OpenCV, and Librosa. Detects manipulated audio, images, and videos using MFCC feature extraction, deep learning models, and real-time prediction through a secure web-based interface.
-# 🎭 Real-Time Multimodal Deepfake Detection System
-
+#  🎭  Real-Time-Fake-Detection-System-Using-CNN-GAN
 AI-powered Deepfake Detection Web Application developed using Python, Flask, TensorFlow, CNN, OpenCV, and Librosa for detecting manipulated audio, image, and video content. The system utilizes Convolutional Neural Networks (CNN) for image classification, MFCC-based audio feature extraction for voice analysis, and OpenCV frame processing for video deepfake detection with real-time prediction capabilities through a secure Flask-based web interface.
 
 ---
