@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  deepfake-detection:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: deepfake-detection-app
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./static:/app/static
+      - ./models:/app/models
+    environment:
+      - FLASK_ENV=production
+      - FLASK_APP=appv2.py
+      - PYTHONUNBUFFERED=1
+      - MAX_CONTENT_LENGTH=524288000
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    networks:
+      - deepfake-network
+
+networks:
+  deepfake-network:
+    driver: bridge
+
+volumes:
+  uploads:
+  models:
